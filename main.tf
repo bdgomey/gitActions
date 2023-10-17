@@ -8,4 +8,3 @@ resource "azurerm_resource_group" "main2" {
   name = "terraform2"
 }
 
-###
