@@ -27,5 +27,6 @@ jobs:
   TerraformInit:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - run: terraform init
     - run: terraform apply --auto-approve
