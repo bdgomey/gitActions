@@ -24,3 +24,8 @@ jobs:
       with:
         terraform_version: "1.6.1"
     - run: terraform --version
+
+  TerraformInit:
+    runs-on: ubuntu-latest
+    steps:
+    - run: terraform init
