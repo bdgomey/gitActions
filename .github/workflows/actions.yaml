@@ -1,6 +1,8 @@
+name: Terraform
+
 on: [push]
 
-name: AzureLoginSample
+
 
 jobs:
 
@@ -11,9 +13,6 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    
-    - run: |
-        az vm list-ip-addresses --resource-group myResourceGroup --name myVM --query "[].virtualMachine.network.publicIpAddresses[].ipAddress" -o tsv
 
   TerraformInstall:
     runs-on: ubuntu-latest
