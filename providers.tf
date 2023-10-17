@@ -5,11 +5,12 @@ terraform {
       version = "3.76.0"
     }
   }
-  backend "azurerm" {
-  resource_group_name  = "bjgomes"
-  storage_account_name = "terraformbjgomes"
-  container_name       = "tfstate"
-  key                  = "prod.terraform.tfstate"
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "skillstorm"
+    workspaces {
+      prefix = "conoco-"
+    }
   }
 }
 
