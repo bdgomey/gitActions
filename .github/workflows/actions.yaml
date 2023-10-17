@@ -6,14 +6,6 @@ on: [push]
 
 jobs:
 
-  AzureLogin:
-    runs-on: ubuntu-latest
-    steps:
-    
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
   TerraformInstall:
     runs-on: ubuntu-latest
     steps:
@@ -28,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - uses: hashicorp/setup-terraform@v2
     - uses: azure/CLI@v1
       with:
         azcliversion: 2.30.0
