@@ -33,6 +33,6 @@ jobs:
         azcliversion: 2.30.0
         inlineScript: |
           az login --service-principal -u ${{ secrets.CLIENT_ID }} -p ${{ secrets.CLIENT_SECRET }} --tenant ${{ secrets.TENANT_ID }}
-    - run: terraform init
-    - run: terraform apply --auto-approve
+          terraform init
+          terraform apply --auto-approve
 
