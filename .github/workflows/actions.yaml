@@ -4,7 +4,7 @@ name: AzureLoginSample
 
 jobs:
 
-  build-and-deploy:
+  AzureLogin:
     runs-on: ubuntu-latest
     steps:
     
