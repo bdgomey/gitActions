@@ -13,4 +13,4 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - run: |
-        az webapp list --query "[?state=='Running']"
+        az vm list-ip-addresses --resource-group myResourceGroup --name myVM --query "[].virtualMachine.network.publicIpAddresses[].ipAddress" -o tsv
