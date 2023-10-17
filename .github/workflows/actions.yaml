@@ -28,3 +28,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: terraform init
+    - run: terraform apply --auto-approve
