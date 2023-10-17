@@ -28,8 +28,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: azure/login@v1
+    - uses: azure/CLI@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        azcliversion: 2.30.0
+        inlineScript: |
+          az login --service-principal -u ${{ secrets.CLIENT_ID }} -p ${{ secrets.CLIENT_SECRET }} --tenant ${{ secrets.TENANT_ID }}
     - run: terraform init
     - run: terraform apply --auto-approve
+
