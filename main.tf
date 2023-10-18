@@ -80,7 +80,7 @@ resource "azurerm_virtual_machine_extension" "main" {
 
   settings = <<SETTINGS
     {
-      "script": "  
+      "script": "
         #!/bin/bash
 
         # Update system packages
