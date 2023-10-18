@@ -105,7 +105,7 @@ resource "azurerm_virtual_machine_extension" "main" {
         sed -i \"s/database_name_here/wordpress/g\" /var/www/html/wordpress/wp-config.php
         sed -i \"s/username_here/admin/g\" /var/www/html/wordpress/wp-config.php
         sed -i \"s/password_here/password1234/g\" /var/www/html/wordpress/wp-config.php
-        sed -i \"s/localhost/${azurerm_mysql_server.example.fqdn}/g\" /var/www/html/wordpress/wp-config.php
+        sed -i \"s/localhost/localhosts/g\" /var/www/html/wordpress/wp-config.php
 
         systemctl restart apache2
       "
